@@ -12,7 +12,7 @@ def log_data():
 @pytest.fixture
 def generated_file(log_data):
     filename = generate_log(log_data)
-    yield filename
+    yield filename 
     if os.path.exists(filename):
         os.remove(filename)
 
