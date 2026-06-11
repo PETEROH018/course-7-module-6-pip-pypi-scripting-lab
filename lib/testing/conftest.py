@@ -1,9 +1,12 @@
-#!/usr/bin/env python3
+import os
+import sys
 
-def pytest_itemcollected(item):
-    par = item.parent.obj
-    node = item.obj
-    pref = par.__doc__.strip() if par.__doc__ else par.__class__.__name__
-    suf = node.__doc__.strip() if node.__doc__ else node.__name__
-    if pref or suf:
-        item._nodeid = ' '.join((pref, suf))
+# This forces CodeGrade to see your lib folder before it runs its hidden test_file.py
+student_path = "/home/codegrade/student"
+lib_path = os.path.join(student_path, "lib")
+
+if student_path not in sys.path:
+    sys.path.insert(0, student_path)
+
+if lib_path not in sys.path:
+    sys.path.insert(0, lib_path)
