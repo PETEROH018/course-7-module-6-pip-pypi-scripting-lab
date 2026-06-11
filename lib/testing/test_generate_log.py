@@ -4,8 +4,6 @@ import os
 import pytest
 from datetime import datetime
 from lib.generate_log import generate_log
-sys.path.insert(0, "/home/codegrade/student/lib")
-sys.path.insert(0, "/home/codegrade/student")
 
 @pytest.fixture
 def log_data():
