@@ -1,11 +1,7 @@
 # testing/test_generate_log.py
-import sys
 import os
 import pytest
 from datetime import datetime
-
-sys.path.insert(0, "/home/codegrade/student/lib")
-sys.path.insert(0, "/home/codegrade/student")
 
 from generate_log import generate_log
 
